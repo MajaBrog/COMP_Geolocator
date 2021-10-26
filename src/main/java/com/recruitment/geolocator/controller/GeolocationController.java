@@ -19,18 +19,18 @@ public class GeolocationController {
     private GeolocationMapper geolocationMapper;
 
     @RequestMapping(method = RequestMethod.GET, value = "/geolocation")
-    private List<GeolocationDto> getGeolocations() {
+    private List<GeolocationDto> getGeolocation() {
         return geolocationMapper.mapToGeolocationDtoList(geolocationService.getAllGeolocation());
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/geolocation/{geolocationId}")
-    public GeolocationDto getGeolocation(@PathVariable Long geolocationId) throws RecordNotFoundException {
-        return geolocationMapper.mapToGeolocationDto(geolocationService.getGeolocation(geolocationId).orElseThrow(RecordNotFoundException::new));
+    @RequestMapping(method = RequestMethod.GET, value = "/geolocation/{deviceId}")
+    public GeolocationDto getGeolocation(@PathVariable Long deviceId) throws RecordNotFoundException {
+        return geolocationMapper.mapToGeolocationDto(geolocationService.getGeolocation(deviceId).orElseThrow(RecordNotFoundException::new));
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/geolocation/{geolocationId}")
-    public void deleteGeolocation(@PathVariable Long geolocationId) {
-        geolocationService.deleteGeolocation(geolocationId);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/geolocation/{deviceId}")
+    public void deleteGeolocation(@PathVariable Long deviceId) {
+        geolocationService.deleteGeolocation(deviceId);
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/geolocation")
