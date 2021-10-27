@@ -4,7 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @AllArgsConstructor
@@ -12,9 +17,14 @@ import javax.persistence.*;
 @Entity
 public class Geolocation {
     @Id
+    @NotNull
     public Long deviceId;
-    @Column
+
+    @Min(value = -90)
+    @Max(value = 90)
     public double latitude;
-    @Column
+
+    @Min(value = -180)
+    @Max(value = 180)
     public double longitude;
 }

@@ -4,7 +4,6 @@ import com.recruitment.geolocator.domain.Geolocation;
 import com.recruitment.geolocator.repository.GeolocationRepository;
 import org.junit.Assert;
 import org.junit.Test;
-
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -64,8 +63,8 @@ public class GeolocationServiceTest {
         Geolocation result = geolocationService.getGeolocation(1L).get();
         //Then
         Assert.assertEquals(1L, result.getDeviceId(), 0);
-        Assert.assertEquals(-34.45, result.getLatitude(),0.001);
-        Assert.assertEquals(145.67, result.getLongitude(),0.001);
+        Assert.assertEquals(-34.45, result.getLatitude(), 0.001);
+        Assert.assertEquals(145.67, result.getLongitude(), 0.001);
     }
 
     @Test
@@ -78,8 +77,8 @@ public class GeolocationServiceTest {
         Geolocation result = geolocationService.saveGeolocation(geolocation1);
         //Then
         Assert.assertEquals(1L, result.getDeviceId(), 0);
-        Assert.assertEquals(-46.78, result.getLatitude(),0.001);
-        Assert.assertEquals(78.98, result.getLongitude(),0.001);
+        Assert.assertEquals(-46.78, result.getLatitude(), 0.001);
+        Assert.assertEquals(78.98, result.getLongitude(), 0.001);
     }
 
     @Test

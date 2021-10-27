@@ -1,10 +1,10 @@
 package com.recruitment.geolocator.controller;
 
+import com.google.gson.Gson;
 import com.recruitment.geolocator.domain.Geolocation;
 import com.recruitment.geolocator.domain.GeolocationDto;
 import com.recruitment.geolocator.mapper.GeolocationMapper;
 import com.recruitment.geolocator.service.GeolocationService;
-import com.google.gson.Gson;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
